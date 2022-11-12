@@ -16,17 +16,16 @@ public class PlayerController : MonoBehaviour
         float ws = Input.GetAxis("Vertical");       //Упраление персом
         float ad = Input.GetAxis("Horizontal");
 
-
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.Translate((player.transform.right * ad) * runSpeed);     //Если с шифотм(бег)
-            transform.Translate((player.transform.forward * ws) * runSpeed);
+            transform.Translate(Vector3.right * ad * runSpeed);     //Если с шифотм(бег)
+            transform.Translate(Vector3.forward * ws * runSpeed);
         }
         else
         {
-            transform.Translate((player.transform.right * ad) * speed);        //Если без шифта(ходьба)
-            transform.Translate((player.transform.forward * ws) * speed);
+            transform.Translate((Vector3.right * ad) * speed);        //Если без шифта(ходьба)
+            transform.Translate((Vector3.forward * ws) * speed);
         }
-
+      
     }
 }
