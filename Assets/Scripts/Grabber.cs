@@ -11,7 +11,7 @@ public class Grabber : MonoBehaviour
 
     void Update()
     {
-        Ray ray = new Ray(transform.position, transform.forward * pickUpDist);
+        Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
         Debug.DrawRay(transform.position, transform.forward * pickUpDist, Color.red);
 
@@ -24,8 +24,8 @@ public class Grabber : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    rb.AddForce(Vector3.up * 300f);
-                    Debug.Log("Предмет подобран");
+                    rb.AddForce(Vector3.up * 200f);
+                    Debug.Log("Предмет подобран: " + hit.collider.GetComponent<CanGrabb>().id);
                 }
             }       
             else
