@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class HudScript : MonoBehaviour
 {
     public TextMeshProUGUI barom;
-    public float alt, barometre = 0f;
+    public float alt, barometre = 0f, oxygen = 200f, O2Divider;
     public Transform player;
-    public GameObject clock;
+    public GameObject arrBar, arrO2;
     public LayerMask lay;
 
 
@@ -27,7 +27,13 @@ public class HudScript : MonoBehaviour
 
         barometre = barometre + alt;
         barom.text = "ְעלמספונ " + Mathf.Floor(barometre);
-        clock.transform.rotation = Quaternion.Lerp(clock.transform.rotation, Quaternion.Euler(0, 0, barometre), Time.deltaTime);
+        arrBar.transform.rotation = Quaternion.Lerp(arrBar.transform.rotation, Quaternion.Euler(0, 0, barometre), Time.deltaTime);
+
+        arrO2.transform.rotation = Quaternion.Lerp(arrO2.transform.rotation, Quaternion.Euler(0, 0, -oxygen), Time.deltaTime);
+        while (oxygen <= 0f)
+        {
+            oxygen -= O2Divider;
+        }
 
     }
 }
