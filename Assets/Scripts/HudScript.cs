@@ -9,6 +9,7 @@ public class HudScript : MonoBehaviour
     public TextMeshProUGUI barom;
     public float alt, barometre = 0f;
     public Transform player;
+    public GameObject clock;
     public LayerMask lay;
 
 
@@ -26,6 +27,7 @@ public class HudScript : MonoBehaviour
 
         barometre = barometre + alt;
         barom.text = "ְעלמספונ " + Mathf.Floor(barometre);
+        clock.transform.rotation = Quaternion.Lerp(clock.transform.rotation, Quaternion.Euler(0, 0, barometre), Time.deltaTime);
 
     }
 }
