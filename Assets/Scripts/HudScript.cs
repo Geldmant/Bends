@@ -11,7 +11,7 @@ public class HudScript : MonoBehaviour
     public Transform player;
     public GameObject arrBar, arrO2;
     public LayerMask lay;
-
+    
 
     void Update()
     {
