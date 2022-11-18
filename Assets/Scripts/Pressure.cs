@@ -8,6 +8,8 @@ public class Pressure : MonoBehaviour
     public HudScript HS;
     public Health HP;
     public int DangerPressure;
+    [Header("А и Б сидели на трубе...")]
+    public int a = 1, b = 1;
 
     void Start()
     {
@@ -16,23 +18,40 @@ public class Pressure : MonoBehaviour
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (HS.barometre > DangerPressure)
         {
-            StartCoroutine(SS());
+            if(a == 1)
+            {
+                StartCoroutine(SS());
+                a = 0;
+                b = 1;
+                Debug.Log("Start");
+            }
+
+        }
+        if (HS.barometre < DangerPressure)
+        {
+            if (a == 0)
+            {
+                StopCoroutine(SS());
+                a = 1;
+                b = 0;
+                Debug.Log("Stop");
+            }
 
         }
 
     }
     public IEnumerator SS()
     {
-        while (true)
+        do
         {
-            HP.health -= 5;
+            HP.health -= HP.PressureDamage;
             yield return new WaitForSeconds(1f);
 
-        }
+        } while (b == 1);
     }
 }
 
