@@ -15,11 +15,11 @@ public class HudScript : MonoBehaviour
 
     void Update()
     {
-        Ray ray = new Ray(player.position, -player.up);
-        Debug.DrawRay(player.position, -player.up * 1000f, Color.yellow);
+        Ray ray = new Ray(player.position, player.up);
+        Debug.DrawRay(player.position, player.up * 10000f, Color.yellow);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1000f, lay))
+        if (Physics.Raycast(ray, out hit, 10000f, lay))
         {
             barometre = hit.distance;
 
