@@ -12,9 +12,10 @@ public class Health : MonoBehaviour
 
     public int health,maxhealth;
     public int damage;
-    public int heal = 25;
+    public int heal;
     public TextMeshProUGUI HealthBar;
     public HudScript HS;
+    public int PressureDamage;
 
     private void Start()
     {

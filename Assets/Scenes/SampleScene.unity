@@ -2992,6 +2992,7 @@ MonoBehaviour:
   heal: 25
   HealthBar: {fileID: 399026173}
   HS: {fileID: 1872772512}
+  PressureDamage: 5
 --- !u!114 &1127811999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,15 +3000,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127811990}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7651006ccfb4a9e4b9cd0b825038378c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: {fileID: 1127811998}
   HS: {fileID: 1872772512}
-  DangerPressure: -2
-  TakeDamage: 0
+  DangerPressure: 2
+  OK: 0
 --- !u!1 &1139159654
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,33 +9,43 @@ public class Pressure : MonoBehaviour
     public Health HP;
     public HudScript HS;
     public int DangerPressure;
-    public bool TakeDamage;
+    public bool OK = true;
 
     void Start()
     {
         HP = HP.GetComponent<Health>();
         HS = HS.GetComponent<HudScript>();
-        Fart();
-        
 
-    }                                                               
+
+
+
+    }
     void Update()
     {
-        
-        
-    }
-
-    public void Fart()
-    {
-        if(HP.barometre >= DangerPressure)
+        if (HS.barometre >= DangerPressure && OK == true)
         {
-            HP.health -= HP.damage
-            
+            StartCoroutine(Time());
+            OK = false;
+        } 
+       
+    }
+    public IEnumerator Time()
+    {
+        while (true)
+        {
+            HP.health -= HP.PressureDamage;
+            yield return new WaitForSeconds(5f);
 
         }
-        yield return new WaitForSeconds(5)
-    }
 
+    
+
+
+
+
+        
+    }                                                               
    
-
+    
 }
+
