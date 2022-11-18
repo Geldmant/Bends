@@ -1,53 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-
 
 public class Pressure : MonoBehaviour
 {
-
-    public Health HP;
     public HudScript HS;
+    public Health HP;
     public int DangerPressure;
-    public bool OK = true;
 
     void Start()
     {
         HP = HP.GetComponent<Health>();
         HS = HS.GetComponent<HudScript>();
 
-
-
-
-
     }
+
     void Update()
     {
-        if (HS.barometre >= DangerPressure && OK == true)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(Time());
-            OK = false;
-        } 
-       
-    }
-    public IEnumerator Time()
-    {
-        while (true)
-        {
-            HP.health -= HP.PressureDamage;
-            yield return new WaitForSeconds(5f);
+            StartCoroutine(SS());
 
         }
 
-    
+    }
+    public IEnumerator SS()
+    {
+        while (true)
+        {
+            HP.health -= 5;
+            yield return new WaitForSeconds(1f);
 
-
-
-
-        
-    }                                                               
-   
-    
-
+        }
+    }
 }
 

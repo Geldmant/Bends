@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
     public int damage;
     public int heal;
     public TextMeshProUGUI HealthBar;
+    public Slider sl;
     public HudScript HS;
     public int PressureDamage;
 
@@ -27,7 +29,7 @@ public class Health : MonoBehaviour
     void Update()
     {
 
-        
+        sl.value = health;
 
         HealthBar.text = "HP "+health    ; 
 
