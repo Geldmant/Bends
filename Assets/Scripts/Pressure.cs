@@ -15,27 +15,17 @@ public class Pressure : MonoBehaviour
     {
         HP = HP.GetComponent<Health>();
         HS = HS.GetComponent<HudScript>();
-        Fart();
         
-
     }                                                               
     void Update()
     {
-        
-        
-    }
-
-    public void Fart()
-    {
-        if(HP.barometre >= DangerPressure)
+        if (HS.barometre >= DangerPressure)
         {
-            HP.health -= HP.damage
-            
+            for()
+            {
+                HP.health -= HP.damage;
+            }
 
         }
-        yield return new WaitForSeconds(5)
     }
-
-   
-
 }
