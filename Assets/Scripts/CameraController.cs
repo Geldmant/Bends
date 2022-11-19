@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
 
     [Header("Числа")]
 
-    [Range(50, 200)] public float sensitivity;
+    [Range(0.1f, 40)] public float sensitivity;
     [Range(1, 120)] public float FOV;
     [Header("Булевые")]
 
@@ -33,12 +33,10 @@ public class CameraController : MonoBehaviour
     {
         camer.fieldOfView = FOV;
 
-        float x = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity;
-        float y = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity;
+        float x = Input.GetAxis("Mouse X");
+        float y = Input.GetAxis("Mouse Y");
 
-        y = Math.Clamp(y, -90f, 90f);
-
-        pl.transform.Rotate(Vector3.up * x);
-        transform.Rotate(-Vector3.right * y);
+        pl.transform.Rotate(Vector3.up, x * sensitivity);
+        transform.Rotate(-Vector3.right, y * sensitivity);
     }
 }

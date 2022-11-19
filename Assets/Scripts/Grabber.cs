@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Grabber : MonoBehaviour
 {
     public float pickUpDist;
-    public TextMeshProUGUI txt;
+    public TextMeshProUGUI txt, txt2;
     public Transform player;
 
     void Update()
@@ -42,9 +42,10 @@ public class Grabber : MonoBehaviour
                     Debug.Log("Teleport");
                     
                 }
-                txt.text = "Зайти E: ";
+                txt2.text = "Зайти E: ";
             }
-            
+            else txt2.text = "";
+
         }
     }
 }
