@@ -22,6 +22,7 @@ public class Grabber : MonoBehaviour
             {
                 txt.text = "Подобрать E: " + hit.collider.GetComponent<CanGrabb>().id;
                 Rigidbody rb =  hit.collider.GetComponent<Rigidbody>();
+                //hit.collider.GetComponent<Material.>().i
 
 
                 if (Input.GetKeyDown(KeyCode.E))
@@ -31,6 +32,7 @@ public class Grabber : MonoBehaviour
                 }
             }
             else txt.text = "";
+
 
             if (hit.collider.GetComponent<Door>())
             {

@@ -28,21 +28,20 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-
         sl.value = health;
 
-        HealthBar.text = "HP "+health    ; 
+        HealthBar.text = "HP "+ health;
 
-
-        if (health >= maxhealth)
-       {
-            health = maxhealth;
-        }
-
+        /*
+                if (health >= maxhealth)
+                {
+                    health = maxhealth;
+                }
+        */
+        health = Mathf.Clamp(health, 0, 100);
 
         if (health <= 0)
-        {
-            
+        { 
             Debug.Log("You Died.");
 
         }
@@ -56,9 +55,6 @@ public class Health : MonoBehaviour
             health += heal;
 
         }
-
-
-
         
     }
 }
