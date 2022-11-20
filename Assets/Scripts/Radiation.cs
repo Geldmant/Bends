@@ -14,9 +14,13 @@ public class Radiation : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Игрок вошёл в триггер");
+        ppv.weight = 1f;
     }
     private void OnTriggerStay(Collider other)
     {
+
+        
+
         if (other.GetComponent<PlayerController>())
         {
             DangerThing.transform.LookAt(other.GetComponent<PlayerController>().transform);
@@ -30,9 +34,17 @@ public class Radiation : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(DangerThing.transform.position, DangerThing.transform.forward * Distance, Color.green);
         if (Physics.Raycast(ray, out hit, Distance))
-        {
             DangerDistance = hit.distance;
-            ppv.weight = 1f;        //Тут
+
+        {
+
         }
     }
+    private void OnTriggerExit(Collider Other)
+    {
+        Debug.Log("Игрок вышел из триггера");
+        ppv.weight = 0f;
+
+    }
+
 }
