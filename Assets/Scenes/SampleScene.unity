@@ -11259,16 +11259,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barom: {fileID: 767645531}
-  alt: -273
+  alt: -274
   barometre: 0
   oxygen: 135
   O2Divider: 0
   player: {fileID: 1127811996}
-  arrBar: {fileID: 2118359421}
-  arrO2: {fileID: 781562758}
+  arrBar: {fileID: 2118359422}
+  arrO2: {fileID: 781562759}
   lay:
     serializedVersion: 2
     m_Bits: 16
+  barRot: 13
 --- !u!1 &1904665715
 GameObject:
   m_ObjectHideFlags: 0
