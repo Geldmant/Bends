@@ -226,7 +226,8 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _EnvironmentReflections: 1
-    - _Force: 2.5
+    - _Float: 7
+    - _Force: 4.55
     - _GlossMapScale: 1
     - _Glossiness: 0.599
     - _GlossyReflections: 1
@@ -239,13 +240,14 @@ Material:
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
+    - _IOR: 0
     - _InvTilingScale: 1
     - _Ior: 1.5
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 0
     - _MaterialID: 1
-    - _Metalic: 0.621
+    - _Metalic: 1
     - _Metallic: 1
     - _MetallicRemapMax: 1
     - _MetallicRemapMin: 0
@@ -267,7 +269,7 @@ Material:
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
-    - _Smoothness: 0.769
+    - _Smoothness: 0.577
     - _SmoothnessRemapMax: 0.599
     - _SmoothnessRemapMin: 0
     - _SmoothnessTextureChannel: 0
@@ -310,7 +312,7 @@ Material:
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 1
-    - _isOutline: 0
+    - _isOutline: 1
     m_Colors:
     - _BaseColor: {r: 0.8773585, g: 0, b: 0, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
