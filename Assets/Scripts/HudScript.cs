@@ -12,8 +12,6 @@ public class HudScript : MonoBehaviour
     public Transform player;
     public Transform arrBar, arrO2;
     public LayerMask lay;
-
-    public float barRot = 200f / 20f;
     void Update()
     {
         Ray ray = new Ray(player.position, player.up);
@@ -27,7 +25,8 @@ public class HudScript : MonoBehaviour
 
         barometre += alt;
         barom.text = "ְעלמספונ " + Mathf.Round(barometre);
-        arrBar.localRotation = Quaternion.Euler(arrBar.forward * barRot);
+        arrBar.Rotate(arrBar.forward, 1f);
+
 
         //arrO2.transform.rotation = ;
 
