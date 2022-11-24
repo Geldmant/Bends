@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
-    public float lolofest = 0f;
-    public Transform arrBar, from;
+    public float numMultiplay;
+    public Transform arrBar;
     public HudScript hScr;
+    public bool isBarNoOxygen = true;
     
 
     void Update()
     {
-        arrBar.rotation = Quaternion.Lerp(from.rotation, Quaternion.Euler(Vector3.up * lolofest), 1f);
-
+        if(isBarNoOxygen)
+        arrBar.rotation = Quaternion.Lerp(arrBar.rotation, Quaternion.Euler(-Vector3.forward * (hScr.barometre * numMultiplay)), 1f);
+            else
+            arrBar.rotation = Quaternion.Lerp(arrBar.rotation, Quaternion.Euler(-Vector3.forward * (hScr.oxygen * numMultiplay)), 1f);
 
     }
 }

@@ -9,8 +9,9 @@ public class HudScript : MonoBehaviour
 {
     public TextMeshProUGUI barom;
     public float alt, barometre, oxygen = 200f, O2Divider;
+    public bool O2Divide = true;
     public int lolofest = 1;
-    public Transform Barometr, player, arrBar, arrO2;
+    public Transform Barometr, player;
     public LayerMask lay;
     void Update()
     {
@@ -25,10 +26,18 @@ public class HudScript : MonoBehaviour
 
         barometre += alt;
         barom.text = "Атмосфер " + Mathf.Round(barometre);
-        
 
+        if (O2Divide)
+        {
+            oxygenDivide();
+        }
 
-        //arrO2.transform.rotation = ;
+    }
+
+    public void oxygenDivide()
+    {
+        oxygen -= O2Divider;        //при значении <0.007> 12,6(Минут)
+
 
     }
 }
