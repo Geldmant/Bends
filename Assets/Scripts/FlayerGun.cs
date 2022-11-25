@@ -12,10 +12,11 @@ public class FlayerGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Ammo >= 1)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Ammo == 1)
         {
+            Debug.Log("Shoot");
             Instantiate(Bullet, Vector3.forward, Quaternion.identity, dulo);
-            this.Bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * force);
+            //this.Bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * force);
         }
         if (Input.GetKeyDown(KeyCode.R) && Ammo == 0)
             Ammo = 1;
