@@ -1,2 +1,0 @@
-if barometre = angle arrow {rotate}
-Гарпун

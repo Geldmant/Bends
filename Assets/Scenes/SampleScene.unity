@@ -6767,7 +6767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &317489202
 Transform:
   m_ObjectHideFlags: 0
@@ -6797,9 +6797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0421062ff91c5b649b0896fb7afbfa3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 6329542247824220625, guid: 933c780c243f66d409806494986be122, type: 3}
+  Bullet: {fileID: 1903235979673668933, guid: aebe6dfc9362685458d8f3637d165c53, type: 3}
   Ammo: 1
-  force: 100
+  Magazine: 1
+  force: 500
   dulo: {fileID: 1150262953}
 --- !u!1 &318351364
 GameObject:

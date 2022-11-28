@@ -5,20 +5,21 @@ using UnityEngine;
 public class FlayerGun : MonoBehaviour
 {
     public GameObject Bullet;
-    public int Ammo = 1;
+    public int Ammo;
+    [Tooltip("Кол-во патрон после перезарядки")] public int Magazine;
     public float force;
     public Transform dulo;
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Ammo == 1)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && Ammo >= 1)
         {
             Debug.Log("Shoot");
-            Instantiate(Bullet, Vector3.forward, Quaternion.identity, dulo);
-            //this.Bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * force);
+            Ammo -= 1;
+            Instantiate(Bullet, dulo.position, Quaternion.Euler(this.transform.right));
         }
-        if (Input.GetKeyDown(KeyCode.R) && Ammo == 0)
-            Ammo = 1;
+        if (Input.GetKeyDown(KeyCode.R) && Ammo <= 0)
+            Ammo = Magazine;
     }
 }
