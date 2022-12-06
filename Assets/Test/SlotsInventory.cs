@@ -4,26 +4,20 @@ using UnityEngine;
 
 public class SlotsInventory : MonoBehaviour
 {
-    public bool isFool;
-    
-    
-    void Start()
-    {
-        
-    }
+    public bool isFull;
+    public float num;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.rotation.y = num;
     }
     private void OnTriggerEnter(Collider other)
     {
-        isFool = true;
+        isFull = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isFool = false;
+        isFull = false;
     }
 }
