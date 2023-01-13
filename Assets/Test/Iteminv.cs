@@ -1,8 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Iteminv : MonoBehaviour
 {
-    
+    public bool isGrab;
+
+    public void PickUP(GameObject a)
+    {   
+
+    }
+    public void PickDOWN()
+    {
+
+    }
 }

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SlotsInventory : MonoBehaviour
+public class Slotsinv : MonoBehaviour
 {
     public bool isFull;
 
